@@ -2,21 +2,13 @@ import React from 'react';
 import Item from './items';
 
 function Buttons({ open, setOpen }) {
-
-
-  const handleCategoryChange = (item) => {
+const handleCategoryChange = (item) => {
     setOpen(item);
-
-    
   };
 
   return (
     <>
-   
-   
-
-     
-      {Item.map((item) => (
+    {Item.map((item) => (
         <button
           key={item.id}
           onClick={() => handleCategoryChange(item)}
