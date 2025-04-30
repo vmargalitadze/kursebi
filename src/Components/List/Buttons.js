@@ -1,10 +1,15 @@
 import React from 'react';
 import Item from './items';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 function Buttons({ open, setOpen }) {
+  const router = useRouter()
 const handleCategoryChange = (item) => {
     setOpen(item);
+    router.push(item.href);
+   
+    
   };
 
   return (
