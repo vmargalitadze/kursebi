@@ -1,5 +1,6 @@
 import React from 'react';
 import Item from './items';
+import Link from 'next/link';
 
 function Buttons({ open, setOpen }) {
 const handleCategoryChange = (item) => {
@@ -9,7 +10,7 @@ const handleCategoryChange = (item) => {
   return (
     <>
     {Item.map((item) => (
-        <button
+        <Link href={item.href}
           key={item.id}
           onClick={() => handleCategoryChange(item)}
           className={`outline-none rounded-lg cursor-pointer transition-all duration-150 ease-in-out 
@@ -19,7 +20,7 @@ const handleCategoryChange = (item) => {
             ${open === item ? "bg-[#203e72] text-white" : "text-black"}`}
         >
           {item.text}
-        </button>
+        </Link>
       ))}
     </>
   );
