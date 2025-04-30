@@ -4,6 +4,8 @@ import Item from './items';
 function Buttons({ open, setOpen }) {
 const handleCategoryChange = (item) => {
     setOpen(item);
+    console.log(item);
+    
   };
 
   return (
