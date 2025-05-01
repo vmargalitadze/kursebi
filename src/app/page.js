@@ -1,10 +1,10 @@
-import List from "@/Components/List/List";
+import Api from "../Components/List/Api";
 
 
 export default function Home() {
   return (
-    <div className="items-center h-screen justify-center flex">
-      <List />
-    </div>
+    <div className="items-center mt-12 justify-center flex">
+    <Api />
+  </div>
   );
 }
