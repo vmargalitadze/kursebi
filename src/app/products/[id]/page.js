@@ -43,10 +43,10 @@ async function Page({ params }) {
                 <div className="flex items-center gap-3"></div>
 
                 <div className="flex gap-5 mt-4 sm:mt-6">
-                  <button class="rounded-lg cursor-pointer px-4 py-2 bg-gray-200 hover:bg-gray-300 duration-300">
+                  <button className="rounded-lg cursor-pointer px-4 py-2 bg-gray-200 hover:bg-gray-300 duration-300">
                     Add to cart
                   </button>
-                  <button class="rounded-lg cursor-pointer px-4 py-2 bg-gray-900 text-gray-100">
+                  <button className="rounded-lg cursor-pointer px-4 py-2 bg-gray-900 text-gray-100">
                     Buy Now
                   </button>
                 </div>
