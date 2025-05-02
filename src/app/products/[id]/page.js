@@ -1,57 +1,58 @@
 async function Page({params}) {
     const { id } = await params
  
-    const res = await fetch(`https://rickandmortyapi.com/api/character/${id}`)
+    const res = await fetch(`https://fakestoreapi.com/products/${id}`)
     const data = await res.json()
   
 
-    // const fetchProducts = async () => {
-    //     const res = await fetch(`https://rickandmortyapi.com/api/character/${id}`)  
-    //     const data = await res.json()
-    //     setInfo(data)
-    //    }
-    
-    // useEffect(() => {
-    // if (id)  fetchProducts()
-    // }, [id])
 
-   
     
   return (
     <>
-<div className="mt-16">
-  <div className="container">
-    <div className="mx-auto flex justify-between flex-col lg:flex-row gap-4 lg:gap-6">
-      
-   
-      <div className="w-full lg:w-[40rem]">
-        <div className="w-full">
-          <div className="flex flex-col md:grid md:grid-cols-[1fr_auto] gap-2 items-start">
-            <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden">
-              <img
-                src={data.image}
-                alt={data.name}
-                className="object-cover w-full h-full rounded-xl"
-              />
+<div className="mt-20">
+   <div className="container">
+            <div className=" mx-auto  flex justify-between gap-6 lg:gap-8 flex-col lg:flex-row">
+              <div className="w-full lg:w-[58%] ">
+              <img src={data.image} alt={data.title} className="w-full h-auto object-cover rounded-md" />
+              </div>
+              <div className="lg:max-w-[635px]  w-full">
+                <div className="pb-4 sm:pb-6 border-b border-bdr-clr border-bdr-clr-drk">
+                  <h2 className="font-semibold pb-5 text-3xl leading-none tracking-tight text-title text-black">
+                    {data.title}
+                  </h2>
+  
+                  <span className="text-2xl pb-5 sm:text-3xl  leading-none block">
+                    ბრენდი: {data.Brand}
+                  </span>
+  
+                  <span className="text-2xl pb-5 sm:text-3xl  leading-none block">
+                    ფასი: {data.price} ₾
+                  </span>
+  
+                  <span className="text-2xl pb-5 sm:text-3xl  leading-none block">
+                   კატეგორია: {data.category}
+                  </span>
+  
+                  <p className="text-base  pb-5 md:text-lg leading-6 font-normal text-title text-black mt-2">
+                   {data.description}
+                  </p>
+                </div>
+  
+                <div className="py-5 sm:py-6  ">
+                  <div className="flex items-center gap-3">
+                 
+                  </div>
+  
+                  <div className="flex gap-5 mt-4 sm:mt-6">
+                  <button class="rounded-lg cursor-pointer px-4 py-2 bg-gray-200 hover:bg-gray-300 duration-300">Add to cart</button>
+                  <button class="rounded-lg cursor-pointer px-4 py-2 bg-gray-900 text-gray-100">Buy Now</button>
+                
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <div className="w-full lg:max-w-[42%]">
-        <div className="pb-4 sm:pb-6 ">
-          <h2 className=" pb-4 text-2xl leading-tight tracking-tight text-black">
-          სახელი:   {data.name}
-          </h2>
-        <p className="pb-4 text-2xl leading-tight">სქესი: {data.gender} </p>
-        <p className="pb-4 text-2xl leading-tight">რასა: {data.species} </p>
-        <p className="pb-4 text-2xl leading-tight">სტატუსი: {data.status} </p>
-        <p className="pb-4 text-2xl leading-tight">წარმოშობა: {data.origin.name} </p>
-        </div>
-      </div>
-
-    </div>
-  </div>
 </div>
 
 </>
