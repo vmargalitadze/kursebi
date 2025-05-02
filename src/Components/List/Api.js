@@ -10,7 +10,6 @@ function Api() {
     const res = await fetch("https://fakestoreapi.com/products");
     const data = await res.json();
     setProduct(data);
-
   };
 
   useEffect(() => {
@@ -26,22 +25,21 @@ function Api() {
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-4">
             {product.map((item) => (
-              <div key={item.id} className="p-8 border-2 border-gray-200 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out">
-              <Link href={`/products/${item.id}`} >
-              
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-64 object-cover rounded-lg mb-4"
-                />
-               </Link>
+              <div
+                key={item.id}
+                className="p-8 border-2 border-gray-200 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out"
+              >
+                <Link href={`/products/${item.id}`}>
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-64 object-cover rounded-lg mb-4"
+                  />
+                </Link>
 
                 <div className="flex justify-between">
-                  <Link href={`/products/${item.id}`}  >
-                  
-                  <h3 className="font-sans font-bold">
-                   {item.title}
-                  </h3>
+                  <Link href={`/products/${item.id}`}>
+                    <h3 className="font-sans font-bold">{item.title}</h3>
                   </Link>
                   <span className="text-base font-mono">$49.90</span>
                 </div>
