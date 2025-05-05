@@ -1,3 +1,5 @@
+
+
 async function Page({ params }) {
   const { id } = await params;
 
@@ -40,6 +42,19 @@ async function Page({ params }) {
               </div>
 
               <div className="py-5 sm:py-6  ">
+              <div className="flex items-center gap-3">
+                  <div className="inc-dec flex items-center gap-2">
+                    <div className="dec w-8 h-8 bg-[#E8E9EA] bg-dark-secondary flex items-center justify-center">
+                      <button >  <span className="text-2xl"> - </span> </button>
+                    </div>
+                  </div>
+
+                  <div> 0 </div>
+
+                  <div className="inc w-8 h-8 bg-[#E8E9EA] bg-dark-secondary flex items-center justify-center">
+                    <button ><span className="text-2xl"> + </span></button>
+                  </div>
+                </div>
                 <div className="flex items-center gap-3"></div>
 
                 <div className="flex gap-5 mt-4 sm:mt-6">
